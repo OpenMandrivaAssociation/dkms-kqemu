@@ -67,16 +67,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 set -x
-/usr/sbin/dkms --rpm_safe_upgrade add -m %{module_name} -v %{kqemu_dkmsver}
-/usr/sbin/dkms --rpm_safe_upgrade build -m %{module_name} -v %{kqemu_dkmsver}
-/usr/sbin/dkms --rpm_safe_upgrade install -m %{module_name} -v %{kqemu_dkmsver}
+/usr/sbin/dkms --rpm_safe_upgrade add -m %{module_name} -v %{dkmsver}
+/usr/sbin/dkms --rpm_safe_upgrade build -m %{module_name} -v %{dkmsver}
+/usr/sbin/dkms --rpm_safe_upgrade install -m %{module_name} -v %{dkmsver}
 /sbin/modprobe %{module_name} >/dev/null 2>&1 || :
 
 %preun
 # rmmod can fail
 /sbin/rmmod %{module_name} >/dev/null 2>&1
 set -x
-/usr/sbin/dkms --rpm_safe_upgrade remove -m %{module_name} -v %{kqemu_dkmsver} --all || :
+/usr/sbin/dkms --rpm_safe_upgrade remove -m %{module_name} -v %{dkmsver} --all || :
 
 %files
 %defattr(-,root,root)
