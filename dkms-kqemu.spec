@@ -1,6 +1,6 @@
 %define module_name	kqemu
 %define version	1.4.0
-%define rel	7
+%define rel	8
 %define snapshot	pre1
 %define fullver	%{version}%{?snapshot:%{snapshot}}
 %define dkmsver	%{fullver}-%{rel}
