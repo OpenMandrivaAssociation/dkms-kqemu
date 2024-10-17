@@ -18,7 +18,7 @@ Version:	%{version}
 Release:	%{release}
 Source0:	http://bellard.org/qemu/kqemu-%{fullver}.tar.gz
 License:	GPL
-URL:		http://bellard.org/qemu/
+URL:		https://bellard.org/qemu/
 Group:		System/Kernel and hardware
 Requires(post):	 dkms
 Requires(preun): dkms
