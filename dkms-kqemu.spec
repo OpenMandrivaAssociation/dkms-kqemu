@@ -4,7 +4,7 @@
 %define snapshot	pre1
 %define fullver	%{version}%{?snapshot:%{snapshot}}
 %define dkmsver	%{fullver}-%{rel}
-%define release	%mkrel %{?snapshot:0.%{snapshot}.}%{rel}
+%define release %{?snapshot:0.%{snapshot}.}%{rel}.1
 %ifarch %{ix86}
 %define kqemu_program	qemu
 %endif
